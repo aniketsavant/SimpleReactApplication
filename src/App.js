@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import LoginComponent from './components/login/login';
+// import LoginComponent from './components/login/login';
+import LoginWithClassComponent from './components/login/loginWithClass';
 import ParentHomeComponent from './components/home/parentHome';
 import {
   Router,
@@ -16,15 +16,16 @@ const history = createBrowserHistory();
 function App() {
   return (
     <Router history = {history}>
-    <Switch>
-      <Route path = "/" exact render = {() => <Redirect to = "/login" />} />
-      <AutehnticateRoute path= "/login" exact component = {LoginComponent} />
-      <AutehnticateRoute path = "/home" component = {ParentHomeComponent} />
-      <Route>
-        Page Not Found..!!
-      </Route>
-    </Switch>
-  </Router>
+      <Switch>
+        <Route path = "/" exact render = {() => <Redirect to = "/login" />} />
+        {/* <AutehnticateRoute path= "/login" exact component = {LoginComponent} /> */}
+        <AutehnticateRoute path= "/login" exact component = {LoginWithClassComponent} />
+        <AutehnticateRoute path = "/home" component = {ParentHomeComponent} />
+        <Route>
+          Page Not Found..!!
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
